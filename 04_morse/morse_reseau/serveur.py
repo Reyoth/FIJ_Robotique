@@ -1,12 +1,15 @@
 # coding: utf-8 
 import network
 import comMorse
+import ledArduino
+
 
 ADDRESS=""
 PORT=1111
 
 sock=network.newServerSocket()
 sock.bind((ADDRESS,PORT))
+
 
 def communication(thread):
     
@@ -17,6 +20,10 @@ def communication(thread):
     print(">>", message)
     message= comMorse.decodeMorse(message)
     print(">>", message)
+    
+    #eledArduino.nvoiCaractere(message[0])
+    ledArduino.envoiPhrase(message)
+    
     thread.clientsocket.send("serveur : j'ai bien recu le message".encode())
     
     if message=="exit":
