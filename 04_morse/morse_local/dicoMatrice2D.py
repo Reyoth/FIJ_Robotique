@@ -132,13 +132,11 @@ dico2D={  "a":[[0,1,1,1,0],
                [1,1,1,1,1]]}
 
 def testMatrice2D(lettre="a"):
-     i=0
-     while i<5:
-          ligne =""
-          for led in dico2D[lettre][i]:
-               ligne += str(led)
-          ligne = ligne.replace("1","[*]")
-          print(ligne.replace("0","[ ]"))
-          i +=1
+     for ligne in dico2D[lettre] :
+          ligneA=""
+          for led in ligne :
+               ligneA += str(led)
+          ligneA = ligneA.replace("1","[*]")
+          print(ligneA.replace("0","[ ]"))
 
-""" testMatrice2D() """
+# testMatrice2D("b")
