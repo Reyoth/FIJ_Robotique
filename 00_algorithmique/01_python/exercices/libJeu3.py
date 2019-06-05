@@ -23,63 +23,69 @@ liste_mots = [
 ]
 
 #dico des stades du pendu
-chances = {  8:["____ ",
+chances = {  7:["____ ",
                 "|/",
-                "|",
-                "|",
-                "|",
-                "|____"],
-             7:["____ ",
-                "|/ |",
                 "|",
                 "|",
                 "|",
                 "|____"],
              6:["____ ",
-                "|/",
+                "|/ |",
                 "|",
                 "|",
                 "|",
                 "|____"],
              5:["____ ",
-                "|/",
-                "|",
+                "|/ |",
+                "|  o",
                 "|",
                 "|",
                 "|____"],
              4:["____ ",
-                "|/",
-                "|",
+                "|/ |",
+                "| \\o",
                 "|",
                 "|",
                 "|____"],
              3:["____ ",
-                "|/",
-                "|",
-                "|",
+                "|/ |",
+                "| \\o/",
+                "|  ",
                 "|",
                 "|____"],
              2:["____ ",
-                "|/",
-                "|",
-                "|",
+                "|/ |",
+                "| \\o/",
+                "|  |",
                 "|",
                 "|____"],
              1:["____ ",
-                "|/",
-                "|",
-                "|",
-                "|",
+                "|/ |",
+                "| \\o/",
+                "|  |",
+                "| / ",
                 "|____"],
              0:["____ ",
-                "|/ | ",
+                "|/ |",
                 "| \\o/",
-                "|  | ",
+                "|  |",
                 "| / \\",
-                "|____"]
+                "|____"],
 }
 
 # fonction qui affiche le pendu en fonction du nombre de chance restante
-
+def pendu (chance=0):
+   for ligne in chances[chance]:
+      print(ligne)
 
 # fonction qui masque les lettre sauf celles deja trouvee passee en parametre
+def masque (mot_a_trouver,lettres_trouvees) :
+   mot_masque=""
+
+   for lettre in mot_a_trouver :
+      if lettre in lettres_trouvees :
+         mot_masque += lettre
+      else :
+         mot_masque += "*"
+   
+   return mot_masque
