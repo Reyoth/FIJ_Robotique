@@ -1,3 +1,9 @@
 # coding: utf-8
-liste = ["a","b","c"]
-morse = []
+
+import dicoMatrice2D
+import comMorse
+
+print("tape un code morse")
+code = input()
+reponse = comMorse.decode(code)
+dicoMatrice2D.testMatrice2D(reponse)

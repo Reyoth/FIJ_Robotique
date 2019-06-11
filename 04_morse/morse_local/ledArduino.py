@@ -1,26 +1,18 @@
-import i2cComm
+#import i2cComm
 import time
+import dicoMatrice2D
 
-dico = { "a" : [[1,1,1,1,1],
-                [1,0,0,0,1],
-                [1,1,1,1,1],
-                [1,0,0,0,1],
-                [1,0,0,0,1]],
+def envoiCaractere(lettre="a"):
 
-         "b" : [[1,1,1,1,0],
-                [1,0,0,0,1],
-                [1,1,1,1,0],
-                [1,0,0,0,1],
-                [1,1,1,1,0]]
-}
-
-def envoiCaractere():
-
-    matrice = dico["a"]
+    matrice = dicoMatrice2D.dico2D[lettre]
     for ligne in matrice:
         for led in ligne :
-            i2cComm.writeNumber(led)
+               pass
+            #i2cComm.writeNumber(led)
 
 print("On va afficher la lettre a")
-envoiCaractere()
+lettre = input()
+dicoMatrice2D.testMatrice2D(lettre)
+
+#envoiCaractere("c")
 

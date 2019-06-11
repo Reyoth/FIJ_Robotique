@@ -79,5 +79,21 @@ lettres=[
 ]
 
 #encode
+def encode(lettre="a"):
+    position = lettres.index(lettre)
+    return codesMorse[position]
 
 #decode
+def decode(morse=".-"):
+    position = codesMorse.index(morse)
+    return lettres[position]
+
+#test
+""" print("tape une lettre")
+lettre = input()
+reponse = encode(lettre)
+print(reponse)
+
+print("tape un code")
+code = input()
+print( decode(code) ) """
